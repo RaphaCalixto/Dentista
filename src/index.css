@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta Editorial Tons de Azul & Porcelana */
+  --sapphire-canvas: #F4F7FB;
+  --sapphire-mist: #E7EEF8;
+  --sapphire-deep: #09152B;
+  --sapphire-navy: #0F2347;
+  --sapphire-royal: #1A56DB;
+  --sapphire-cobalt: #2563EB;
+  --sapphire-ice: #7BB3FF;
+  --sapphire-frost: #DCE8FA;
+  --sapphire-ink: #09152B;
+  --sapphire-ink-soft: #42587B;
+  --sapphire-ink-dark: #F4F7FB;
+  --sapphire-ink-dark-soft: #A8C0E2;
+
+  /* Tipografia Editorial */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Curvas orgânicas */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  background-color: var(--sapphire-canvas);
+  color: var(--sapphire-ink);
+  font-family: var(--font-sans);
+  scroll-behavior: auto;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background-color: var(--sapphire-canvas);
+  color: var(--sapphire-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* Formatos Arquitetônicos Distintos de Cards */
+.card-arch {
+  border-radius: 999px 999px 24px 24px;
+}
+
+.card-chamfer {
+  clip-path: polygon(
+    0 28px,
+    28px 0,
+    100% 0,
+    100% calc(100% - 28px),
+    calc(100% - 28px) 100%,
+    0 100%
+  );
+}
+
+.card-leaf {
+  border-radius: 8px 64px 8px 64px;
+}
+
+.card-pill-ticket {
+  border-radius: 40px 12px 40px 12px;
+}
+
+.card-capsule-cut {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 44px) 0,
+    100% 44px,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* Máscaras e scrims localizados (sem wash full-frame) */
+.scrim-lead-corner {
+  background: radial-gradient(
+    ellipse 85% 75% at 15% 85%,
+    rgba(9, 21, 43, 0.78) 0%,
+    rgba(9, 21, 43, 0.36) 45%,
+    rgba(9, 21, 43, 0) 80%
+  );
+}
+
+.scrim-bottom-band {
+  background: linear-gradient(
+    to top,
+    rgba(9, 21, 43, 0.86) 0%,
+    rgba(9, 21, 43, 0.42) 42%,
+    rgba(9, 21, 43, 0) 100%
+  );
+}
+
+/* Grid técnico sutil de fundo */
+.bg-blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(26, 86, 219, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 86, 219, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-blueprint-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(123, 179, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(123, 179, 255, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Sombras em camadas inspiradas em porcelana e safira */
+.shadow-sapphire {
+  box-shadow:
+    0 6px 14px -3px rgba(9, 21, 43, 0.06),
+    0 18px 34px -8px rgba(15, 35, 71, 0.12),
+    0 32px 56px -12px rgba(26, 86, 219, 0.08);
+}
+
+.shadow-sapphire-dark {
+  box-shadow:
+    0 12px 28px -6px rgba(4, 10, 24, 0.45),
+    0 28px 60px -12px rgba(4, 10, 24, 0.65);
+}
+
+/* Scrollbar refinada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E7EEF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6B89BA;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1A56DB;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
